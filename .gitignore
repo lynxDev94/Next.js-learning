@@ -1,0 +1,48 @@
+# See https://help.github.com/articles/ignoring-files/
+
+# Dependencies
+node_modules/
+.pnp/
+.pnp.js
+.yarn/
+.yarn/install-state.gz
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Testing
+coverage/
+
+# Next.js
+.next/
+out/
+.vercel/
+
+# Build output
+build/
+dist/
+
+# Local env files
+.env
+.env*.local
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# Misc
+*.pem
+
+# Ensure subproject node_modules is also ignored from repo root
+foodie-starting/node_modules/
