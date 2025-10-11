@@ -15,5 +15,4 @@ function NewsList({news}) {
   </ul>
   )
 }
-
 export default NewsList
