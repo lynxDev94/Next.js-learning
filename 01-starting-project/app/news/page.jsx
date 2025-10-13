@@ -6,6 +6,7 @@ import { getAllNews } from "../lib/news.js";
 async function NewsPage() {
 
   const news = await getAllNews();
+  
   return (
     <nav>
       <h1>News</h1>

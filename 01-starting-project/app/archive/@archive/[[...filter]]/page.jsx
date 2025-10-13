@@ -8,21 +8,21 @@ import {
 import NewsList from "../../../components/news-list.jsx";
 import Link from "next/link";
 
-function FilteredNewsPage({ params }) {
+async function FilteredNewsPage({ params }) {
   const filter = params.filter;
   const selectedYear = filter?.[0];
   const selectedMonth = filter?.[1];
 
   let news;
-  let links = getAvailableNewsYears();
+  let links = await getAvailableNewsYears();
 
   if (selectedYear && !selectedMonth) {
-    news = getNewsForYear(selectedYear);
+    news = await getNewsForYear(selectedYear);
     links = getAvailableNewsMonths(selectedYear);
   }
 
   if(selectedYear && selectedMonth){
-    news = getNewsForYearAndMonth(selectedYear, selectedMonth);
+    news = await getNewsForYearAndMonth(selectedYear, selectedMonth);
     links = [];
   }
 
@@ -37,7 +37,7 @@ function FilteredNewsPage({ params }) {
       <header id="archive-header">
         <nav>
           <ul>
-            {links.map((link) => {
+            {links?.map((link) => {
               const href = selectedYear ? `/archive/${selectedYear}/${link}` : `/archive/${link}`;
               return (
                 <li key={link}>
